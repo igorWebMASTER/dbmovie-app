@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import MovieList from './components/MovieList';
 import MovieHeader from './components/MovieHeader';
 import SearchBox from './components/SearchBox';
+import AddFavourites from './components/AddFavourites';
+
 import './styles/global.css';
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [favourites, setFavourites] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
   const getMovieRequest = async (searchValue) => {
@@ -23,6 +26,11 @@ function App() {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
+  const addFavouriteMovie = (movie) => {
+    const newFavouriteList = [...favourites, movie];
+    setFavourites(newFavouriteList);
+  };
+
   return (
     <>
       <div className='containerFluid'>
@@ -34,7 +42,22 @@ function App() {
           />
         </div>
         <div className='row'>
-          <MovieList movies={movies} />
+          <MovieList
+            movies={movies}
+            handleFavouritesClick={addFavouriteMovie}
+            favouriteComponent={AddFavourites}
+          />
+        </div>
+
+        <div className='row'>
+          <MovieHeader heading='Favourites' />
+        </div>
+        <div className='row'>
+          <MovieList
+            movies={favourites}
+            handleFavouritesClick={addFavouriteMovie}
+            favouriteComponent={AddFavourites}
+          />
         </div>
       </div>
     </>

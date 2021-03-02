@@ -1,14 +1,23 @@
 import React from 'react';
-import { Container } from './style';
+import { Container, ContainerOverlay } from './style';
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 function MovieList(props) {
+  const FavouriteComponent = props.favouriteComponent;
+
   return (
     <>
       {props.movies.map((movie, index) => (
         <Container>
-          <div>
+          <Link smooth='true'>
             <img src={movie.Poster} alt='movie' />
-          </div>
+            <ContainerOverlay
+              onClick={() => props.handleFavouritesClick(movie)}
+            >
+              {props.favouriteComponent()}
+              <FavouriteComponent />
+            </ContainerOverlay>
+          </Link>
         </Container>
       ))}
     </>
