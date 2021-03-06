@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import MovieList from '../../components/MovieList';
-import MovieHeader from '../../components/MovieHeader';
-import SearchBox from '../../components/SearchBox';
+import MovieList from '../../components/sections/MovieList';
+import MovieHeader from '../../components/sections/MovieHeader';
+import SearchBox from '../../components/sections/SearchBox';
 
 import { Box, Flex, Grid } from '@chakra-ui/react';
 import { flexSettings, gridSettings } from '../../config/style.grid';
 
-import SignUpForm from '../../components/Drawer';
+import SignUpForm from '../../components/ui/Drawer';
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState([]);
