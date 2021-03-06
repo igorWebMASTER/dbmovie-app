@@ -1,8 +1,6 @@
-import React from 'react';
-
 import { Input, Box } from '@chakra-ui/react';
 
-const SearchBox = (props) => {
+function SearchBox(props) {
   return (
     <Box>
       <Input
@@ -15,6 +13,6 @@ const SearchBox = (props) => {
       />
     </Box>
   );
-};
+}
 
 export default SearchBox;

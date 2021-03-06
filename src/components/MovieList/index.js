@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Link, ScaleFade, Image } from '@chakra-ui/react';
 
 const MovieList = (props) => {
