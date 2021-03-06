@@ -1,16 +1,19 @@
 import React from 'react';
 
-function SearchBox(props) {
+import { Input, Box } from '@chakra-ui/react';
+
+const index = (props) => {
   return (
-    <div>
-      <input
+    <Box>
+      <Input
+        focusBorderColor='lime'
         type='text'
         placeholder='Digite para buscar..'
         onChange={(event) => props.setSearchValue(event.target.value)}
         value={props.value}
       />
-    </div>
+    </Box>
   );
-}
+};
 
-export default SearchBox;
+export default index;

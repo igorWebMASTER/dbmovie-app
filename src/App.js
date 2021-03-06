@@ -3,8 +3,9 @@ import MovieList from './components/MovieList';
 import MovieHeader from './components/MovieHeader';
 import SearchBox from './components/SearchBox';
 import AddFavourites from './components/AddFavourites';
+import Dashboard from './components/Dashboard';
 
-import './styles/global.css';
+import { Box } from '@chakra-ui/react';
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -32,24 +33,28 @@ function App() {
   };
 
   return (
-    <>
-      <div className='containerFluid'>
-        <div className='row'>
-          <MovieHeader heading='Movies' />
-          <SearchBox
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-          />
-        </div>
-        <div className='row'>
-          <MovieList
-            movies={movies}
-            handleFavouritesClick={addFavouriteMovie}
-            favouriteComponent={AddFavourites}
-          />
-        </div>
-      </div>
-    </>
+    <Box
+      bg='#141414'
+      h='100vh'
+      width='100vw'
+      MaxWidth='100vw'
+      d='flex'
+      flexDirection='column'
+    >
+      <Box>
+        <MovieHeader heading='Movies' />
+        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
+      </Box>
+
+      <Dashboard />
+      <Box>
+        <MovieList
+          movies={movies}
+          handleFavouritesClick={addFavouriteMovie}
+          favouriteComponent={AddFavourites}
+        />
+      </Box>
+    </Box>
   );
 }
 

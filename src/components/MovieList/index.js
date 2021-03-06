@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, ContainerOverlay } from './style';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Box, Link, ScaleFade, Image } from '@chakra-ui/react';
 
 function MovieList(props) {
   const FavouriteComponent = props.favouriteComponent;
@@ -8,17 +7,21 @@ function MovieList(props) {
   return (
     <>
       {props.movies.map((movie, index) => (
-        <Container>
-          <Link smooth='true'>
-            <img src={movie.Poster} alt='movie' />
-            <ContainerOverlay
-              onClick={() => props.handleFavouritesClick(movie)}
-            >
-              {props.favouriteComponent()}
-              <FavouriteComponent />
-            </ContainerOverlay>
-          </Link>
-        </Container>
+        <ScaleFade initialScale={0.9}>
+          <Box>
+            <Link smooth='true'>
+              <Image
+                boxSize='4rem'
+                borderRadius='full'
+                src={movie.Poster}
+                alt='movie'
+              />
+              <Box onClick={() => props.handleFavouritesClick(movie)}>
+                <FavouriteComponent />
+              </Box>
+            </Link>
+          </Box>
+        </ScaleFade>
       ))}
     </>
   );
