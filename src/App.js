@@ -48,17 +48,6 @@ function App() {
             favouriteComponent={AddFavourites}
           />
         </div>
-
-        <div className='row'>
-          <MovieHeader heading='Favourites' />
-        </div>
-        <div className='row'>
-          <MovieList
-            movies={favourites}
-            handleFavouritesClick={addFavouriteMovie}
-            favouriteComponent={AddFavourites}
-          />
-        </div>
       </div>
     </>
   );
