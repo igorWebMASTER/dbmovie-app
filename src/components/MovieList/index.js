@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Link, ScaleFade, Image } from '@chakra-ui/react';
 
-function MovieList(props) {
+const MovieList = (props) => {
   const FavouriteComponent = props.favouriteComponent;
 
   return (
@@ -25,6 +25,6 @@ function MovieList(props) {
       ))}
     </>
   );
-}
+};
 
 export default MovieList;

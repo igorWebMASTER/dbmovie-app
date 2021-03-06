@@ -1,13 +1,12 @@
 import React from 'react';
 
 import { Box } from '@chakra-ui/react';
-
-function MovieHeader(props) {
+const MovieHeader = (props) => {
   return (
     <Box color='white' fontSize='2rem' fontWeight='bold'>
       {props.heading}
     </Box>
   );
-}
+};
 
 export default MovieHeader;

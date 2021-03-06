@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, GridItem } from '@chakra-ui/react';
 
-const index = () => {
+const Dashboard = () => {
   return (
     <div>
       <Grid
@@ -20,4 +20,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Dashboard;

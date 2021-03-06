@@ -1,43 +1,24 @@
 import React from 'react';
-import { Box, Text, Span, Link, Image } from '@chakra-ui/react';
 
-const index = () => {
+const AddFavourite = () => {
   return (
-    <Box p={4} display={{ md: 'flex' }}>
-      <Box flexShrink={0}>
-        <Image
-          borderRadius='lg'
-          width={{ md: 40 }}
-          src='https://bit.ly/2jYM25F'
-          alt='Woman paying for a purchase'
+    <>
+      <span className='mr-2'>Add to Favourites</span>
+      <svg
+        width='1em'
+        height='1em'
+        viewBox='0 0 16 16'
+        class='bi bi-heart-fill'
+        fill='red'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          fill-rule='evenodd'
+          d='M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z'
         />
-      </Box>
-      <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
-        <Text
-          fontWeight='bold'
-          textTransform='uppercase'
-          fontSize='sm'
-          letterSpacing='wide'
-          color='teal.600'
-        >
-          Marketing
-        </Text>
-        <Link
-          mt={1}
-          display='block'
-          fontSize='lg'
-          lineHeight='normal'
-          fontWeight='semibold'
-          href='#'
-        >
-          Finding customers for your new business
-        </Link>
-        <Span mt={2} color='gray.500'>
-          Adicionar aos favoritos
-        </Span>
-      </Box>
-    </Box>
+      </svg>
+    </>
   );
 };
 
-export default index;
+export default AddFavourite;
