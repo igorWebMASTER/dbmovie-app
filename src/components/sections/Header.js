@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Flex, Text, Button, Stack } from '@chakra-ui/react';
+import { Box, Flex, Text, Button } from '@chakra-ui/react';
 import Logo from '../ui/Logo';
 
 // import { CloseIcon, MenuIcon } from '.../Icons';
